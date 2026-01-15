@@ -1,5 +1,6 @@
 variable "instance_type" { 
 	type = string 
+    default     = "t2.medium"
 }
 variable "ami_id"        { 
 	type = string 
@@ -20,6 +21,7 @@ variable "resource_tags"   {
 # Define variables related to the AWS region.
 variable "AWS_REGION" {
   description = "The AWS region where resources will be deployed."
+  default     = "us-east-2"
 }
 
 # Define the environment variable to specify the deployment environment/name.

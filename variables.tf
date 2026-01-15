@@ -8,9 +8,11 @@ variable "server_name"   {
 	type = string 
 }
 variable "security_groups" { 
+	description = "Format: Strings as 'value', Lists as ['a','b'], Maps as {'key'='val'}"
 	type = list(string) 
 }
 variable "resource_tags"   { 
+    description = "Format: Strings as 'value', Lists as ['a','b'], Maps as {'key'='val'}"
 	type = map(string) 
 }
 

@@ -1,9 +1,20 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.AWS_REGION
 }
 
+data "aws_ami" "al2023" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["al2023-ami-kernel-default-x86_64-*"]
+  }
+}
+
+
 resource "aws_instance" "web" {
-  ami           = var.ami_id
+  ami             = data.aws_ami.al2023.id
   instance_type = var.instance_type
 
   # Using the List variable

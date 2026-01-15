@@ -3,13 +3,14 @@ variable "instance_type" {
 }
 variable "ami_id"        { 
 	type = string 
+    default     = "ami-0f5fcdfbd140e4ab7"
 }
 variable "server_name"   { 
 	type = string 
 }
 variable "security_groups" { 
-	description = "Format: Strings as 'value', Lists as ['a','b'], Maps as {'key'='val'}"
-	type = list(string) 
+   description = "Format: Strings as 'value', Lists as ['a','b'], Maps as {'key'='val'}"
+   type = list(string) 
 }
 variable "resource_tags"   { 
     description = "Format: Strings as 'value', Lists as ['a','b'], Maps as {'key'='val'}"
